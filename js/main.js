@@ -191,7 +191,7 @@ function processData(returnJ) {
                 icon: L.divIcon({
                     className: r.pm25?`ward_divicon`:`na_divicon`,
                     iconSize: [17, 17],
-                    html: parseInt(r.pm25) || 'NA'
+                    html: r.pm25? parseFloat(r.pm25).toFixed(0) : 'NA'
                 }),
                 interactive: false
             });
@@ -202,7 +202,7 @@ function processData(returnJ) {
                 icon: L.divIcon({
                     className: r.pm25 ? `iudx_divicon` : `na_divicon`,
                     iconSize: [20, 20],
-                    html: r.pm25? parseInt(r.pm25) : 'NA'
+                    html: r.pm25? parseFloat(r.pm25).toFixed(0) : 'NA'
                 }) 
             });
             marker.addTo(iudxLayer);
@@ -218,7 +218,7 @@ function processData(returnJ) {
                 icon: L.divIcon({
                     className: r.pm25 ? `safar_divicon` : `na_divicon`,
                     iconSize: [20, 20],
-                    html: r.pm25? parseInt(r.pm25) : 'NA'
+                    html: r.pm25? parseFloat(r.pm25).toFixed(0) : 'NA'
                 }) 
             });
             marker.addTo(safarLayer);
