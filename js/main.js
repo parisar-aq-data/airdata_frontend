@@ -65,7 +65,7 @@ $(document).ready(function () {
     populateLegend();
     populateInfo();
     flatpickr("#date1", { 
-        defaultDate:getTodayDate(-1), 
+        defaultDate:getTodayDate(0), 
         maxDate:'today',
         minDate: '2021-04-23',
         onChange: function(selectedDates, dateStr, instance) {
@@ -73,7 +73,7 @@ $(document).ready(function () {
         }
     }); // minDate: d, maxDate: EP_DATE
 
-    var date1 = getTodayDate(-1);
+    var date1 = getTodayDate(0);
     loadMap(date1);
 
     // loadIUDX();
